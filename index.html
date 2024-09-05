@@ -22,6 +22,8 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            width: 400px;
             transition: all 0.3s ease;
         }
 
@@ -40,13 +42,13 @@
         }
 
         h1, h2 {
-            font-size: 2.5em;
+            font-size: 2em;
             color: #333;
             line-height: 1.5;
         }
 
         h3 {
-            font-size: 1.5em;
+            font-size: 1.3em;
             color: #333;
             margin-bottom: 20px;
         }
@@ -72,6 +74,7 @@
             margin: 10px;
             cursor: pointer;
             transition: 0.3s ease;
+            width: 100%;
         }
 
         .btn-primary {
@@ -111,6 +114,49 @@
             margin-top: 20px;
         }
 
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            h1, h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.1em;
+            }
+
+            .heart-icons i {
+                font-size: 2.5em;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .proposal-container, .page4_class1 {
+                width: 90%;
+            }
+
+            h1, h2 {
+                font-size: 1.3em;
+            }
+
+            h3 {
+                font-size: 1em;
+            }
+
+            .heart-icons i {
+                font-size: 2em;
+                padding: 8px;
+            }
+
+            button {
+                font-size: 0.9em;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -118,7 +164,7 @@
     <!-- Proposal Page -->
     <div class="proposal-container" id="cta">
         <h1>I love You, <br></h1>
-        <h3>Will You Be My Premika?</h3>
+        <h3>Will You Be My Bandi?</h3>
         <div class="heart-icons">
             <i class='bx bxs-heart bx-border-circle'></i>
         </div>
@@ -149,7 +195,7 @@
 
             // Send an alert with your phone number or WhatsApp contact
             setTimeout(() => {
-                alert("Contact me on WhatsApp: +917276260989");
+                alert("Contact me on WhatsApp: Ankit ");
             }, 1000);  // Delay the alert by 1 second to show after transition
         });
 
