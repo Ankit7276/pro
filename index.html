@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom right, #ff9966, #ff5e62);
+        }
+
+        .proposal-container, .page4_class1 {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .proposal-container {
+            display: block;
+        }
+
+        .page4_class1 {
+            display: none;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1, h2 {
+            font-size: 2.5em;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .heart-icons {
+            margin-bottom: 20px;
+        }
+
+        .heart-icons i {
+            font-size: 3em;
+            margin: 0 10px;
+            color: red;
+            background-color: yellowgreen;
+            padding: 15px;
+            border-radius: 50%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 30px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #45a049;
+        }
+
+        .btn-secondary {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e53935;
+        }
+
+        /* Second Page Styling */
+        .page4_class1 {
+            background: linear-gradient(to bottom right, #7b4397, #dc2430);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .page4_class1 h2 {
+            color: #fff;
+        }
+
+        .page4_class1 i {
+            font-size: 4em;
+            color: red;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Proposal Page -->
+    <div class="proposal-container" id="cta">
+        <h1>I love You, <br></h1>
+        <h3>Will You Be My Premika?</h3>
+        <div class="heart-icons">
+            <i class='bx bxs-heart bx-border-circle'></i>
+        </div>
+        <button type="button" class="btn btn-primary" id="yesbtn">Yes</button>
+        <button type="button" class="btn btn-secondary" id="nobtn">No</button>
+    </div>
+
+    <!-- Hidden Page (page4) -->
+    <div class="page4_class1" id="page4">
+        <h2>Hi <b id="displayusername" style="color:red;">Dear!</b>!</h2>
+        <div class="user"></div>
+        <h2>You are successfully logged in my heart.</h2>
+        <i class='bx bxs-heart bx-border-circle'></i>
+        <h2>**************</h2>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yesbtn');
+        const noBtn = document.getElementById('nobtn');
+        const cta = document.getElementById('cta');
+        const page4 = document.getElementById('page4');
+
+        // Event listener for Yes button
+        yesBtn.addEventListener('click', () => {
+            // Hide the proposal container and show the page4 content
+            cta.style.display = 'none';
+            page4.style.display = 'block';
+
+            // Send an alert with your phone number or WhatsApp contact
+            setTimeout(() => {
+                alert("Contact me on WhatsApp: +917276260989");
+            }, 1000);  // Delay the alert by 1 second to show after transition
+        });
+
+        // Event listener for No button (fun interaction on hover)
+        noBtn.addEventListener('mouseenter', () => {
+            const yesIdx = Array.from(cta.children).indexOf(yesBtn);
+            const noIdx = Array.from(cta.children).indexOf(noBtn);
+
+            if (yesIdx < noIdx) {
+                cta.insertBefore(noBtn, yesBtn);
+            } else {
+                cta.insertBefore(yesBtn, noBtn);
+            }
+        });
+    </script>
+
+</body>
+</html>
